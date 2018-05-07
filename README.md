@@ -43,8 +43,10 @@ based on our purpose:
 
 If we want to be able to interact with a **pod**, we start and interactive session with it. First we specify the flag "`-it`", to pass standard input as TTY to the container, "`kubectl exec -it <podName> <InteractiveType>`". We then specify the **pod** and the interactive session type we want to use:
 
-*Run an interactive session with "`/bash/bin`", "`mysql`" or some other command in the specified **pod** which you can get with "`get pods`" command*\
+*Run an interactive session with "`/bin/bash`", "`mysql`" or some other command in the specified **pod** which you can get with "`get pods`" command*\
 `kubectl exec -it bigdb-694794dc78-h268h /bin/bash`
+
+The documentation for Kubectl with examples can be found [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-strong-getting-started-strong-).
 
 ### Minikube
 
@@ -89,7 +91,7 @@ The Bazel commands will do a build before executing the seeding or cleaning, whi
 *Building everything with bazel*\
 `bazel build :all`
 
-The Procfile contains all the configurations for each service. All the services in the file will be started with Forego, if you want to skip some of them for any reason you can comment it out before starting it up.
+The "`Procfile.minikube`" file contains all the configurations for each service. All the services in the file will be started with Forego, if you want to skip some of them for any reason you can comment it out before starting it up.
 
 --------------------------------------------------------------
 
@@ -117,7 +119,7 @@ Next we can use one of the following commands to see what is in the database:
 *For Cassandra*\
 `describe tables;`
 
-From here on we need to use MySQL or Cassandra commands to navigate the database and work with it.
+From here on we need to use [MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html) or [Cassandra](http://cassandra.apache.org/doc/latest/tools/cqlsh.html) commands to navigate the database and work with it.
 
 --------------------------------------------------------------
 
@@ -139,25 +141,40 @@ The checkout command can be used for many purposes, a couple of them are:
 `git checkout -- <fileName or directory>`\
 `git checkout -- .`
 
+*You can create a new branch use the "`-b`" flag, it will be based on your current head (the branch your on) or you can give it the branch you want to base it on*\
+`git checkout -b <nameOfNewBranch>`\
+`git checkout -b <nameOfNewBranch> <nameOfExistingBranch>`
 
-git stash
+*To see all the branches in your repository use branch, use the "`-vv`" flag to list the commit at which each head of the branches is at as well*\
+`git branch`
+`git branch -vv`
 
-git branch
+*To delete a branch use the "`-d`" flag followed by the branch name to delete*\
+`git branch -d <branchToDelete>`
 
-git rebase
+*To add which unstaged file or directory should be added to the commit (this should obviously be done before commiting)*\
+`git add <fileName or Directory>`
 
-git reflog
+*To remove a file from the staging, so that it won't be part of the commit*\
+`git reset HEAD <fileName or Directory>`
+
+*To see a list of all the reference logs, which can be used for other commands or simply to see the history of our work*\
+`git reflog show --all`
 
 *To make a commit, using the "`-m`" flag allows the message to be added in the command right away inside the quotation marks*\
 `git commit -m "fea(Agent) changes added"`
 
+It happens often that we might need to switch branches to work on something else. In these cases we would like to save what we are doing at the moment before we checkout another branch, this avoids conflicts with files. We can do this with the stashing command. Stashing works like a stack, anything stashed will be poped in a Last-In-First-Out bases.
 
-*To add which unstaged file or directory should be added to the commit*\
-`git add <fileName or Directory>`
+*To save all your staged and tracked files use stash, if you want your untracked files to be saved as well you either add them first to tracking or you use the "`-u`" flag*\
+`git stash`\
+`git stash -u`
 
+*To see a list of your stash*\
+`git stash list`
 
---------------------------------------------------------------
+*To recover your saved files either use pop by itself to get the last save or give it a stash reference (you can get this by using `git stash list`)*\
+`git stash pop`\
+`git stash pop stash@{1}`
 
-## Python
-
---------------------------------------------------------------
+For more Git commands and tutorials, one of the best pages is [Atlassians Git Tutorial](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud).
