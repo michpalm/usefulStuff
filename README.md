@@ -1,4 +1,4 @@
-# Collection<GoodToKnowCommands>
+# `Collection<GoodToKnowCommands>`
 
 This is a small collection of useful and good to know commands for the most used tools in the Integration Team at Tink.
 From the perspective of someone that has started very recently and keeps asking the same stuff over and over!
