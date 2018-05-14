@@ -181,11 +181,11 @@ For more Git commands and tutorials, one of the best pages is [Atlassians Git Tu
 
 ## Complete Commands and Tips List
 
--[X] Kubernetes 
--[X] Bazel
--[X] Databases
--[X] Git
--[ ] Python
--[ ] Bash
--[ ] Intellij
--[ ] Top errors and solutions
+- [X] Kubernetes 
+- [X] Bazel
+- [X] Databases
+- [X] Git
+- [ ] Python
+- [ ] Bash
+- [ ] Intellij
+- [ ] Top errors and solutions
