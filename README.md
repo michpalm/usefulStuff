@@ -188,4 +188,4 @@ For more Git commands and tutorials, one of the best pages is [Atlassians Git Tu
 - [ ] Python
 - [ ] Bash
 - [ ] Intellij
-- [ ] Top errors and solutions
+- [ ] Frequent errors and solutions
