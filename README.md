@@ -178,3 +178,14 @@ It happens often that we might need to switch branches to work on something else
 `git stash pop stash@{1}`
 
 For more Git commands and tutorials, one of the best pages is [Atlassians Git Tutorial](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud).
+
+## Complete Commands and Tips List
+
+-[X] Kubernetes 
+-[X] Bazel
+-[X] Databases
+-[X] Git
+-[ ] Python
+-[ ] Bash
+-[ ] Intellij
+-[ ] Top errors and solutions
